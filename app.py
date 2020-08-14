@@ -1,13 +1,9 @@
 from flask import Flask
 from flask import render_template
 
-app = Flask(__name__)
+import os
 
-@app.after_request
-def add_header(response):
-    response.cache_control.max = 0
-    response.cache_control.public = True 
-    return response
+app = Flask(__name__)
 
 @app.route("/")
 def index():

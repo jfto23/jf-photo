@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>{{ album_id }}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-	here are the pictures for {{ album_id }}
+	<div class="main">
+		<div class="name">
+			here are the pictures for {{ album_id }}
+		</div>
+	</div>
 </body>
 </html>
