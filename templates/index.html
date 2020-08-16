@@ -9,7 +9,7 @@
 <body>
 	<div class="main">
 		<div class="name">
-			Jean-François To - Photo Archive
+			Jean-François To - Archive
 		</div>
 		<div class="content">
 			<a href="#" class="cover" style="background-image: url({{ url_for('static',
@@ -18,6 +18,15 @@
 				filename='pictures/IMG_0004.jpg') }});">ALBUM 2</a>
 			<a href="#" class="cover" style="background-image: url({{ url_for('static',
 				filename='pictures/IMG_0010.jpg') }});">ALBUM 3</a>
+
+			{% for album in albums %}
+			<a href="{{ url_for('album', album_id=album.title) }}"
+				 class="cover"
+				 style="background-image: url({{ album.cover_link }});">
+				{{ album.title }}
+			</a>
+			{% endfor %}
+
 		</div>
 	</div>
 </body>
