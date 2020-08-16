@@ -13,11 +13,13 @@
 		</div>
 		<div class="content">
 			{% for album in albums %}
-			<a href="{{ url_for('album', album_title=album.title) }}"
-				 class="cover"
-				 style="background-image: url({{ album.cover_link }});">
-				{{ album.title }}
-			</a>
+			<div class="layer">
+				<a href="{{ url_for('album', album_title=album.title) }}"
+					 class="cover"
+					 style="background-image: url({{ album.cover_link }});">
+					{{ album.title }}
+				</a>
+			</div>
 			{% endfor %}
 
 		</div>
