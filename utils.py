@@ -25,7 +25,7 @@ dct = {}
 for image in images:
     album = image[:image.index("/")]
     if dct.get(album):
-        dct[album].append(image)
+        dct[album].append(f"{BASE_URL}{image}")
     else:
         dct[album] = [f"{BASE_URL}{image}"]
 
@@ -36,12 +36,3 @@ for album_title, images in dct.items():
             images[0],
             images)
     albums.append(album)
-
-for album in albums:
-    print(album.title)
-    print(album.cover_link)
-    print(album.images)
-
-
-
-
