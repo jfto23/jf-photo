@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ album_id }}</title>
+	<title>{{ album_title }}</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 	<div class="main">
 		<div class="name">
-			here are the pictures for {{ album_id }}
+		
+			<a href="{{ url_for('index') }}">Home</a>
+		</div>
+		<div class="center">
+			{{ album_title }}
+		</div>
+		<div class="content">
+
+			{% for image in images %}
+			<img src="{{ image }}">
+			{% endfor %}
+		
 		</div>
 	</div>
 </body>

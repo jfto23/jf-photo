@@ -15,7 +15,11 @@ def index():
 
     return render_template("index.html", albums=albums)
 
-@app.route("/album/<album_id>")
-def album(album_id):
-    return render_template("album.html",album_id=album_id)
+@app.route("/album/<album_title>")
+def album(album_title):
+    for album in albums:
+        if album.title == album_title:
+            images = album.images
+
+    return render_template("album.html",album_title=album_title,images=images)
 
